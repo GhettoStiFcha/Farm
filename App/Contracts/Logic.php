@@ -17,10 +17,10 @@ class Logic
 
     public function start(array $cows, array $chikens)
     {
-        $quantity['cows'] = $this->farm->addCow($cows);
-        $quantity['chikens'] = $this->farm->addChiken($chikens);
-        $result['cows'] = $this->farm->takeMilk($quantity['cows']);
-        $result['chikens'] = $this->farm->takeEggs($quantity['chikens']);
+        $quantity['cows'] = $this->farm->addAnimal($cows);
+        $quantity['chikens'] = $this->farm->addAnimal($chikens);
+        $result['cows'] = $this->farm->collectAnimalProducts($quantity['cows'], 8, 12);
+        $result['chikens'] = $this->farm->collectAnimalProducts($quantity['chikens'], 0, 1);
 
         foreach($result['cows'] as $key => $value){
             $total += $value;
