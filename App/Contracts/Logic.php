@@ -7,8 +7,6 @@ use Contracts\Farm;
 class Logic
 {
     private $farm;
-    public $cows;
-    public $chikens;
 
     public function __construct()
     {
